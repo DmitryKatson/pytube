@@ -181,8 +181,7 @@ def channel_name(url: str) -> str:
         if function_match:
             logger.debug("finished regex search, matched: %s", pattern)
             uri_style = function_match.group(1)
-            uri_identifier = function_match.group(2)
-            return f'/{uri_style}/{uri_identifier}'
+            return f'/{uri_style}'
 
     raise RegexMatchError(
         caller="channel_name", pattern="patterns"
